@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Price Markup Extension",
+  "version": "1.0",
+  "description": "Increase the price displayed on a webpage by a certain percentage or a fixed minimum dollar amount.",
+  "permissions": ["activeTab", "storage", "tabs", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
+
